@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Tiled2Unity generated xml data-->
+<!--Do not modify by hand-->
+<!--Last exported: 13/10/2017 16:30:50-->
+<Tiled2Unity version="1.0.13.0">
+  <AssignMaterial mesh="platforms_mesh_0001" material="grotto-tiles [www.imagesplitter.net]-1-5" />
+  <AssignMaterial mesh="platforms_mesh_0002" material="grotto-tiles [www.imagesplitter.net]-1-5" />
+  <AssignMaterial mesh="platforms_mesh_0003" material="grotto-tiles [www.imagesplitter.net]-1-5" />
+  <AssignMaterial mesh="platforms_mesh_0004" material="grotto-tiles [www.imagesplitter.net]-1-5" />
+  <Prefab name="platforms" orientation="Orthogonal" staggerAxis="Y" staggerIndex="Odd" hexSideLength="0" numLayers="4" numTilesWide="10" numTilesHigh="1" tileWidth="16" tileHeight="16" exportScale="1" mapWidthInPixels="160" mapHeightInPixels="16" backgroundColor="#808080">
+    <GameObject name="single" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+      <GameObject name="grotto-tiles [www.imagesplitter.net]-1-5" x="0" y="0" mesh="platforms_mesh_0001" sortingLayerName="" sortingOrder="0" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>16,0 0,0 0,-16 16,-16</Path>
+        </PolygonCollider2D>
+      </GameObject>
+    </GameObject>
+    <GameObject name="double" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+      <GameObject name="grotto-tiles [www.imagesplitter.net]-1-5" x="0" y="0" mesh="platforms_mesh_0002" sortingLayerName="" sortingOrder="1" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>16,-16 48,-16 48,0 16,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+    </GameObject>
+    <GameObject name="triple" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+      <GameObject name="grotto-tiles [www.imagesplitter.net]-1-5" x="0" y="0" mesh="platforms_mesh_0003" sortingLayerName="" sortingOrder="2" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>48,-16 96,-16 96,0 48,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+    </GameObject>
+    <GameObject name="quad" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+      <GameObject name="grotto-tiles [www.imagesplitter.net]-1-5" x="0" y="0" mesh="platforms_mesh_0004" sortingLayerName="" sortingOrder="3" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>96,-16 160,-16 160,0 96,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+    </GameObject>
+  </Prefab>
+  <ImportMesh filename="platforms_mesh_0001.obj">IyBUaWxlZDJVbml0eSBnZW5lcmF0ZWQgZmlsZS4gRG8gbm90IG1vZGlmeSBieSBoYW5kLg0KIyBXYXZlZnJvbnQgZmlsZSBmb3IgJ3BsYXRmb3Jtc19tZXNoXzAwMDEub2JqJw0KDQojIFZlcnRpY2VzIChDb3VudCA9IDQpDQp2IDAgLTE2IDANCnYgLTE2IC0xNiAwDQp2IC0xNiAwIDANCnYgMCAwIDANCg0KIyBUZXh0dXJlIGNvb3JpZGluYXRlcyAoQ291bnQgPSA0KQ0KdnQgMCAwDQp2dCAxIDANCnZ0IDEgMQ0KdnQgMCAxDQoNCiMgTm9ybWFsDQp2biAwIDAgLTENCg0KIyBNZXNoIGRlc2NyaXB0aW9uDQpnIHBsYXRmb3Jtc19tZXNoXzAwMDENCg0KIyBGYWNlcw0KZiAxLzEvMSAyLzIvMSAzLzMvMSA0LzQvMQoNCg==</ImportMesh>
+  <ImportMesh filename="platforms_mesh_0002.obj">IyBUaWxlZDJVbml0eSBnZW5lcmF0ZWQgZmlsZS4gRG8gbm90IG1vZGlmeSBieSBoYW5kLg0KIyBXYXZlZnJvbnQgZmlsZSBmb3IgJ3BsYXRmb3Jtc19tZXNoXzAwMDIub2JqJw0KDQojIFZlcnRpY2VzIChDb3VudCA9IDgpDQp2IC0xNiAtMTYgMA0KdiAtMzIgLTE2IDANCnYgLTMyIDAgMA0KdiAtMTYgMCAwDQp2IC0zMiAtMTYgMA0KdiAtNDggLTE2IDANCnYgLTQ4IDAgMA0KdiAtMzIgMCAwDQoNCiMgVGV4dHVyZSBjb29yaWRpbmF0ZXMgKENvdW50ID0gNCkNCnZ0IDAgMA0KdnQgMSAwDQp2dCAxIDENCnZ0IDAgMQ0KDQojIE5vcm1hbA0Kdm4gMCAwIC0xDQoNCiMgTWVzaCBkZXNjcmlwdGlvbg0KZyBwbGF0Zm9ybXNfbWVzaF8wMDAyDQoNCiMgRmFjZXMNCmYgMS8xLzEgMi8yLzEgMy8zLzEgNC80LzEKZiA1LzEvMSA2LzIvMSA3LzMvMSA4LzQvMQoNCg==</ImportMesh>
+  <ImportMesh filename="platforms_mesh_0003.obj">IyBUaWxlZDJVbml0eSBnZW5lcmF0ZWQgZmlsZS4gRG8gbm90IG1vZGlmeSBieSBoYW5kLg0KIyBXYXZlZnJvbnQgZmlsZSBmb3IgJ3BsYXRmb3Jtc19tZXNoXzAwMDMub2JqJw0KDQojIFZlcnRpY2VzIChDb3VudCA9IDEyKQ0KdiAtNDggLTE2IDANCnYgLTY0IC0xNiAwDQp2IC02NCAwIDANCnYgLTQ4IDAgMA0KdiAtNjQgLTE2IDANCnYgLTgwIC0xNiAwDQp2IC04MCAwIDANCnYgLTY0IDAgMA0KdiAtODAgLTE2IDANCnYgLTk2IC0xNiAwDQp2IC05NiAwIDANCnYgLTgwIDAgMA0KDQojIFRleHR1cmUgY29vcmlkaW5hdGVzIChDb3VudCA9IDQpDQp2dCAwIDANCnZ0IDEgMA0KdnQgMSAxDQp2dCAwIDENCg0KIyBOb3JtYWwNCnZuIDAgMCAtMQ0KDQojIE1lc2ggZGVzY3JpcHRpb24NCmcgcGxhdGZvcm1zX21lc2hfMDAwMw0KDQojIEZhY2VzDQpmIDEvMS8xIDIvMi8xIDMvMy8xIDQvNC8xCmYgNS8xLzEgNi8yLzEgNy8zLzEgOC80LzEKZiA5LzEvMSAxMC8yLzEgMTEvMy8xIDEyLzQvMQoNCg==</ImportMesh>
+  <ImportMesh filename="platforms_mesh_0004.obj">IyBUaWxlZDJVbml0eSBnZW5lcmF0ZWQgZmlsZS4gRG8gbm90IG1vZGlmeSBieSBoYW5kLg0KIyBXYXZlZnJvbnQgZmlsZSBmb3IgJ3BsYXRmb3Jtc19tZXNoXzAwMDQub2JqJw0KDQojIFZlcnRpY2VzIChDb3VudCA9IDE2KQ0KdiAtOTYgLTE2IDANCnYgLTExMiAtMTYgMA0KdiAtMTEyIDAgMA0KdiAtOTYgMCAwDQp2IC0xMTIgLTE2IDANCnYgLTEyOCAtMTYgMA0KdiAtMTI4IDAgMA0KdiAtMTEyIDAgMA0KdiAtMTI4IC0xNiAwDQp2IC0xNDQgLTE2IDANCnYgLTE0NCAwIDANCnYgLTEyOCAwIDANCnYgLTE0NCAtMTYgMA0KdiAtMTYwIC0xNiAwDQp2IC0xNjAgMCAwDQp2IC0xNDQgMCAwDQoNCiMgVGV4dHVyZSBjb29yaWRpbmF0ZXMgKENvdW50ID0gNCkNCnZ0IDAgMA0KdnQgMSAwDQp2dCAxIDENCnZ0IDAgMQ0KDQojIE5vcm1hbA0Kdm4gMCAwIC0xDQoNCiMgTWVzaCBkZXNjcmlwdGlvbg0KZyBwbGF0Zm9ybXNfbWVzaF8wMDA0DQoNCiMgRmFjZXMNCmYgMS8xLzEgMi8yLzEgMy8zLzEgNC80LzEKZiA1LzEvMSA2LzIvMSA3LzMvMSA4LzQvMQpmIDkvMS8xIDEwLzIvMSAxMS8zLzEgMTIvNC8xCmYgMTMvMS8xIDE0LzIvMSAxNS8zLzEgMTYvNC8xCg0K</ImportMesh>
+  <ImportTexture filename="grotto-tiles [www.imagesplitter.net]-1-5.png">iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYUlEQVR42mPwaqn5TwlmABEGwX5gjM5GxjBxZHVKdlaoBhCDQZowDCDWEGTN9DcAXTNJBuDSTFQgYtNMPwNwacYIA3I04zWAGM14Y4FkA8jRjGEALFTRUxo+zXADYBxyMACZLd+/Im8HZAAAAABJRU5ErkJggg==</ImportTexture>
+</Tiled2Unity>
