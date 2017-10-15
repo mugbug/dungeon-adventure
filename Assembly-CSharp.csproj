@@ -47,7 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GrottoEscapeArtwork\Scripts\CameraBehavior.cs" />
+     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\DestroyMe.cs" />
+     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\EnemyDamage.cs" />
+     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\EnemyHealth.cs" />
+     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\FireBehavior.cs" />
+     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\FireHit.cs" />
      <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PlayerBehavior.cs" />
+     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />

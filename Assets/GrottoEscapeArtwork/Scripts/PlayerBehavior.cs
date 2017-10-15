@@ -19,6 +19,12 @@ public class PlayerBehavior : MonoBehaviour {
 
 	private Rigidbody2D rigidbody;
 
+	// shooting
+	public Transform fireTip;
+	public GameObject fire;
+	float fireRate = 0.5f;
+	float nextFire = 0;
+
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody2D> ();
@@ -31,6 +37,11 @@ public class PlayerBehavior : MonoBehaviour {
 			grounded = false;
 			animator.SetBool ("onGround", grounded);
 			rigidbody.AddForce (new Vector2 (0, jumpHeight));
+		}
+
+		// player shooting
+		if (Input.GetAxisRaw ("Fire1") > 0) {
+			shootFire ();
 		}
 	}
 
@@ -57,5 +68,19 @@ public class PlayerBehavior : MonoBehaviour {
 		Vector3 scale = transform.localScale;
 		scale.x *= -1;
 		transform.localScale = scale;
+	}
+
+	void shootFire(){
+		if (Time.time > nextFire) {
+			animator.SetBool ("shoot", true);
+			nextFire = Time.time + fireRate;
+			if (facingRight) {
+				Instantiate (fire, fireTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
+			} else if (!facingRight) {
+				Instantiate (fire, fireTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
+			}
+		} else {
+			animator.SetBool ("shoot", false);
+		}
 	}
 }
