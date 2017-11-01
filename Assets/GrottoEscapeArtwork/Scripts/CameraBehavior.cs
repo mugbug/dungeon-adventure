@@ -4,38 +4,32 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour {
 
-	public Transform target; // what the camera is following
-	public float smoothing;
+	private Vector2 velocity;
 
-	Vector3 offset;
-	float lowY;
-	float lowX;
-	float highY;
-	float highX;
+	public float smoothTimeY;
+	public float smoothTimeX;
 
-	// Use this for initialization
-	void Start () {
-		offset = transform.position - target.position;
+	public GameObject player;
 
-		highX = 786.82074f;
-		highY = 22.95f;
-		lowX = transform.position.x;
-		lowY = transform.position.y;
+	public bool bounds;
+
+	public Vector3 minCameraPos;
+	public Vector3 maxCameraPos;
+
+	void Start(){
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
-	// Update is called once per frame
-	void FixedUpdate () {
-		Vector3 targetCamPos = target.position + offset;
+	void FixedUpdate(){
+		float posX = Mathf.SmoothDamp (transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
+		float posY = Mathf.SmoothDamp (transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
-		transform.position = Vector3.Lerp (transform.position, targetCamPos, smoothing*Time.deltaTime);
+		transform.position = new Vector3 (posX, posY, transform.position.z);
 
-		if (transform.position.y < lowY)
-			transform.position = new Vector3 (transform.position.x, lowY, transform.position.z);
-		if (transform.position.y > highY)
-			transform.position = new Vector3 (transform.position.x, highY, transform.position.z);
-		if (transform.position.x < lowX)
-			transform.position = new Vector3 (lowX, transform.position.y, transform.position.z);
-		if (transform.position.x > highX)
-			transform.position = new Vector3 (highX, transform.position.y, transform.position.z);
+		if (bounds) {
+			transform.position = new Vector3(Mathf.Clamp(transform.position.x, minCameraPos.x, maxCameraPos.x),
+				Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y),
+				Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z));
+		}
 	}
 }

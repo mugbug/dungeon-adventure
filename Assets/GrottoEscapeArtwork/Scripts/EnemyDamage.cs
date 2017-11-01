@@ -4,37 +4,26 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
 
-	public float damage;
+	public int damage;
 	public float damageRate;
-	public float pushBackForce;
 
-	float nextDamage;
+	private float nextDamage;
+
+	private PlayerBehavior player;
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerBehavior> ();
 		nextDamage = 0f;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag == "Player" && nextDamage < Time.time) {
+	void OnTriggerStay2D (Collider2D other) {
+		if (other.CompareTag("Player") && nextDamage < Time.time) {
 			PlayerHealth playerHP = other.gameObject.GetComponent<PlayerHealth> ();
 			playerHP.receiveDamage (damage);
 			nextDamage = Time.time + damageRate;
 
-			pushBack (other.transform);
+			StartCoroutine(player.Knockback(0.02f, 50, player.transform.position));
 		}
-	}
-
-	void pushBack (Transform pushedObject) {
-		Vector2 pushDirection = new Vector2 (0, (pushedObject.position.y - transform.position.y)).normalized;
-		pushDirection *= pushBackForce;
-		Rigidbody2D pushRB = pushedObject.gameObject.GetComponent<Rigidbody2D> ();
-		pushRB.velocity = Vector2.zero;
-		pushRB.AddForce (pushDirection, ForceMode2D.Impulse);
 	}
 }

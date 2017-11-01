@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dungeon-adventure", "Assembly-CSharp.csproj", "{532F2833-EF55-9680-BDEB-74A58467FE3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dungeon-adventure", "Assembly-CSharp-Editor.csproj", "{417E1EAF-A618-AABB-FC4D-B1BEF6E6FCC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{532F2833-EF55-9680-BDEB-74A58467FE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532F2833-EF55-9680-BDEB-74A58467FE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532F2833-EF55-9680-BDEB-74A58467FE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532F2833-EF55-9680-BDEB-74A58467FE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{417E1EAF-A618-AABB-FC4D-B1BEF6E6FCC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417E1EAF-A618-AABB-FC4D-B1BEF6E6FCC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417E1EAF-A618-AABB-FC4D-B1BEF6E6FCC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417E1EAF-A618-AABB-FC4D-B1BEF6E6FCC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -12,7 +12,7 @@ public class FireBehavior : MonoBehaviour {
 	public float aliveTime;
 
 	// fire hit
-	public float fireDamage;
+	public int fireDamage;
 
 	// Use this for initialization
 	void Awake () {

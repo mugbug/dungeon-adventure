@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public float maxHealth;
-	private float currentHealth;
+	public int maxHealth;
+	public int currentHealth;
 
 	PlayerBehavior controlMovement;
 
@@ -21,16 +21,35 @@ public class PlayerHealth : MonoBehaviour {
 		
 	}
 
-	public void receiveDamage (float damage) {
+	public void receiveDamage (int damage) {
 		if (damage <= 0)
 			return;
 		currentHealth -= damage;
+		gameObject.GetComponent<Animation> ().Play ("PlayerRedFlash");
 		if (currentHealth <= 0) {
 			makeDead ();
 		}
 	}
 
 	public void makeDead () {
-		Destroy (gameObject);
+//		Destroy (gameObject);
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.CompareTag("EnergyCapsule")) {
+			Destroy (col.gameObject);
+			if (currentHealth + 1 >= 6)
+				currentHealth = 6;
+			else
+				currentHealth += 1;
+		}
+		if (col.CompareTag ("EnergyTank")) {
+			Destroy (col.gameObject);
+			if (currentHealth + 3 >= 6)
+				currentHealth = 6;
+			else
+				currentHealth += 3;
+		}
 	}
 }

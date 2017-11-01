@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour {
 
-	public float maxHealth;
-	private float currentHealth;
+	public int maxHealth;
+	private int currentHealth;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour {
 		
 	}
 
-	public void receiveDamage (float damage) {
+	public void receiveDamage (int damage) {
 		currentHealth -= damage;
 		if (currentHealth <= 0) {
 			Destroy (gameObject);

@@ -25,11 +25,16 @@ public class PlayerBehavior : MonoBehaviour {
 	float fireRate = 0.5f;
 	float nextFire = 0;
 
+	// References
+	private GameMaster gm;
+
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody2D> ();
 		animator = GetComponent<Animator> ();
 		facingRight = true;
+
+		gm = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameMaster> ();
 	}
 
 	void Update() {
@@ -82,5 +87,23 @@ public class PlayerBehavior : MonoBehaviour {
 		} else {
 			animator.SetBool ("shoot", false);
 		}
+	}
+
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.CompareTag("Crystal")) {
+			Destroy(col.gameObject);
+			gm.score += 1;
+		}
+	}
+
+	public IEnumerator Knockback (float knockDur, float knockbackPower, Vector3 knockbackDir) {
+		float timer = 0;
+
+		while (knockDur > timer) {
+			timer += Time.deltaTime;
+			rigidbody.AddForce (new Vector3 (knockbackDir.x * -100, knockbackDir.y * knockbackPower, transform.position.z));
+		}
+
+		yield return 0;
 	}
 }
