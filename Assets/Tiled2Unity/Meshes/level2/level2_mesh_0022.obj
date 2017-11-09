@@ -1,0 +1,39 @@
+﻿# Tiled2Unity generated file. Do not modify by hand.
+# Wavefront file for 'level2_mesh_0022.obj'
+
+# Vertices (Count = 16)
+v -208 -256 0
+v -224 -256 0
+v -224 -240 0
+v -208 -240 0
+v -768 -256 0
+v -784 -256 0
+v -784 -240 0
+v -768 -240 0
+v -800 -256 0
+v -816 -256 0
+v -816 -240 0
+v -800 -240 0
+v -928 -256 0
+v -944 -256 0
+v -944 -240 0
+v -928 -240 0
+
+# Texture cooridinates (Count = 4)
+vt 0 0
+vt 1 0
+vt 1 1
+vt 0 1
+
+# Normal
+vn 0 0 -1
+
+# Mesh description
+g level2_mesh_0022
+
+# Faces
+f 1/1/1 2/2/1 3/3/1 4/4/1
+f 5/1/1 6/2/1 7/3/1 8/4/1
+f 9/1/1 10/2/1 11/3/1 12/4/1
+f 13/1/1 14/2/1 15/3/1 16/4/1
+

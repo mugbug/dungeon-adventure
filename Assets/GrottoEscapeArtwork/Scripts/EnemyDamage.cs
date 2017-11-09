@@ -6,7 +6,7 @@ public class EnemyDamage : MonoBehaviour {
 
 	public int damage;
 	public float damageRate;
-
+	public bool knockback;
 	private float nextDamage;
 
 	private PlayerBehavior player;
@@ -22,8 +22,9 @@ public class EnemyDamage : MonoBehaviour {
 			PlayerHealth playerHP = other.gameObject.GetComponent<PlayerHealth> ();
 			playerHP.receiveDamage (damage);
 			nextDamage = Time.time + damageRate;
-
-			StartCoroutine(player.Knockback(0.02f, 50, player.transform.position));
+			if (knockback) {
+				StartCoroutine(player.Knockback(0.02f, 50, player.transform.position));
+			}
 		}
 	}
 }

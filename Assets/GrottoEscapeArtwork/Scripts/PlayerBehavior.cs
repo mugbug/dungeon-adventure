@@ -92,7 +92,7 @@ public class PlayerBehavior : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.CompareTag("Crystal")) {
 			Destroy(col.gameObject);
-			gm.score += 1;
+			gm.incrementScore ();
 		}
 	}
 

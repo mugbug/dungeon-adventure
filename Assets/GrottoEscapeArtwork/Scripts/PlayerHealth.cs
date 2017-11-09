@@ -5,13 +5,16 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour {
 
 	public int maxHealth;
-	public int currentHealth;
+	static int currentHealth;
 
 	PlayerBehavior controlMovement;
 
 	// Use this for initialization
 	void Start () {
-		currentHealth = maxHealth;
+		if (Application.loadedLevel == 0) {
+			currentHealth = maxHealth;
+
+		}
 
 		controlMovement = GetComponent<PlayerBehavior> ();
 	}
@@ -33,7 +36,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void makeDead () {
 //		Destroy (gameObject);
-		Application.LoadLevel(Application.loadedLevel);
+		Application.LoadLevel(0);
+		currentHealth = maxHealth;
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
@@ -51,5 +55,9 @@ public class PlayerHealth : MonoBehaviour {
 			else
 				currentHealth += 3;
 		}
+	}
+
+	public int getCurrentHealth() {
+		return currentHealth;
 	}
 }
