@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Tiled2Unity\Shaders\shaDefault.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GrottoEscapeArtwork\Scripts\ResetBlocks.cs">
     <Files>
       <File FileName="Assets\GrottoEscapeArtwork\Scripts\PlayerHealth.cs" Line="1" Column="1" />
       <File FileName="Assets\GrottoEscapeArtwork\Scripts\HUD.cs" Line="1" Column="1" />
       <File FileName="Assets\Tiled2Unity\Shaders\shaDefault.shader" Line="1" Column="1" />
+      <File FileName="Assets\GrottoEscapeArtwork\Scripts\PortalBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets\GrottoEscapeArtwork\Scripts\ResetBlocks.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

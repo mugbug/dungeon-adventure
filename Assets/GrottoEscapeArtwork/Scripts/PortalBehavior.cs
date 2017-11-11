@@ -7,6 +7,7 @@ public class PortalBehavior : MonoBehaviour {
 
 	public int levelToLoad;
 
+	public Vector3 destination;
 	private GameMaster gm;
 
 	void Start() {
@@ -23,7 +24,11 @@ public class PortalBehavior : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D col) {
 		if (col.CompareTag ("Player")) {
 			if (Input.GetKeyDown ("e")) {
-				Application.LoadLevel (levelToLoad);
+				if (levelToLoad >= 0) {
+					Application.LoadLevel (levelToLoad);
+				} else {
+					col.gameObject.transform.position = destination;
+				}
 			}
 		}
 	}
