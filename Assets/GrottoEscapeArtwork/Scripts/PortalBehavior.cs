@@ -25,8 +25,12 @@ public class PortalBehavior : MonoBehaviour {
 		if (col.CompareTag ("Player")) {
 			if (Input.GetKeyDown ("e")) {
 				if (levelToLoad >= 0) {
+					// play portal sound
+					SoundManager.PlaySound ("portal");
 					Application.LoadLevel (levelToLoad);
 				} else {
+					// play teleport sound
+					SoundManager.PlaySound ("teleport");
 					col.gameObject.transform.position = destination;
 				}
 			}

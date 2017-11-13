@@ -58,7 +58,7 @@
      <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PlayerBehavior.cs" />
      <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PortalBehavior.cs" />
-     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\ResetBlocks.cs" />
+     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />

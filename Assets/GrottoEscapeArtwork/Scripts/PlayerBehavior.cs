@@ -39,6 +39,8 @@ public class PlayerBehavior : MonoBehaviour {
 
 	void Update() {
 		if (grounded && Input.GetAxis ("Jump") > 0) {
+			// play jump sound
+			SoundManager.PlaySound ("jump");
 			grounded = false;
 			animator.SetBool ("onGround", grounded);
 			rigidbody.AddForce (new Vector2 (0, jumpHeight));
@@ -79,6 +81,8 @@ public class PlayerBehavior : MonoBehaviour {
 		if (Time.time > nextFire) {
 			animator.SetBool ("shoot", true);
 			nextFire = Time.time + fireRate;
+			// play fire sound
+			SoundManager.PlaySound ("fire");
 			if (facingRight) {
 				Instantiate (fire, fireTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 			} else if (!facingRight) {
@@ -91,6 +95,8 @@ public class PlayerBehavior : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.CompareTag("Crystal")) {
+			// play coin sound
+			SoundManager.PlaySound ("coin");
 			Destroy(col.gameObject);
 			gm.incrementScore ();
 		}
