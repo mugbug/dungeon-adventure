@@ -100,6 +100,13 @@ public class PlayerBehavior : MonoBehaviour {
 			Destroy(col.gameObject);
 			gm.incrementScore ();
 		}
+
+        if (col.CompareTag("ElementalOrb")) {
+            SoundManager.PlaySound("coin");
+            animator.SetBool("win", true);
+            //gameObject.GetComponent<Animation>().Play("PlayerGlowAnimation");
+            Destroy(col.gameObject);
+        }
 	}
 
 	public IEnumerator Knockback (float knockDur, float knockbackPower, Vector3 knockbackDir) {

@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour {
 	static int currentHealth;
 
 	PlayerBehavior controlMovement;
-
+    Animator animator;
 	// Use this for initialization
 	void Start () {
 		if (Application.loadedLevel == 0) {
@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour {
 		}
 
 		controlMovement = GetComponent<PlayerBehavior> ();
+        animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
