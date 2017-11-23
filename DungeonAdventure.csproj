@@ -83,7 +83,10 @@
     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\FireBehavior.cs" />
     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\FireHit.cs" />
     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\GameMaster.cs" />
+    <Compile Include="Assets\GrottoEscapeArtwork\Scripts\GameOver.cs" />
     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\HUD.cs" />
+    <Compile Include="Assets\GrottoEscapeArtwork\Scripts\InfinitePlatform.cs" />
+    <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PlayerBehavior.cs" />
     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\GrottoEscapeArtwork\Scripts\PortalBehavior.cs" />

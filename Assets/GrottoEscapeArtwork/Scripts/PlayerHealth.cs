@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void makeDead () {
 //		Destroy (gameObject);
-		Application.LoadLevel(0);
+		Application.LoadLevel(6);
 		currentHealth = maxHealth;
 	}
 
