@@ -8,7 +8,7 @@ public class DestroyMe : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		Destroy (gameObject, aliveTime);	
+		Destroy (gameObject, aliveTime);
 	}
 	
 	// Update is called once per frame

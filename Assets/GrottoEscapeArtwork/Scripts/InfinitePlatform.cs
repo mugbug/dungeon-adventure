@@ -24,7 +24,7 @@ public class InfinitePlatform : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump"))
         {
-            Application.LoadLevel(0);
+            Application.LoadLevel(1);
         }
     }
 }

@@ -19,6 +19,8 @@ public class PlayerBehavior : MonoBehaviour {
 
 	private Rigidbody2D rigidbody;
 
+    private GameObject cam;
+
 	// shooting
 	public Transform fireTip;
 	public GameObject fire;
@@ -28,6 +30,9 @@ public class PlayerBehavior : MonoBehaviour {
 	// References
 	private GameMaster gm;
 
+    //Color
+    private float r=1f, g=1f, b=1f;
+
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody2D> ();
@@ -35,7 +40,9 @@ public class PlayerBehavior : MonoBehaviour {
 		facingRight = true;
 
 		gm = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameMaster> ();
-	}
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+        fire.GetComponent<SpriteRenderer>().color = new Color(r, g, b, 1f);
+    }
 
 	void Update() {
 		if (grounded && Input.GetAxis ("Jump") > 0) {
@@ -83,7 +90,7 @@ public class PlayerBehavior : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 			// play fire sound
 			SoundManager.PlaySound ("fire");
-			if (facingRight) {
+            if (facingRight) {
 				Instantiate (fire, fireTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 			} else if (!facingRight) {
 				Instantiate (fire, fireTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
@@ -102,12 +109,22 @@ public class PlayerBehavior : MonoBehaviour {
 		}
 
         if (col.CompareTag("ElementalOrb")) {
-            SoundManager.PlaySound("coin");
             animator.SetBool("win", true);
-            //gameObject.GetComponent<Animation>().Play("PlayerGlowAnimation");
+            cam.GetComponent<Camera>().orthographicSize = 2;
+            cam.GetComponent<CameraBehavior>().maxCameraPos = new Vector3(gameObject.transform.position.x,
+                gameObject.transform.position.y, gameObject.transform.position.z);
+            gameObject.GetComponent<Animation>().Play("PlayerGlowAnimation");
+            SoundManager.PlaySound("win");
+            StartCoroutine(Delay());
             Destroy(col.gameObject);
         }
 	}
+
+    IEnumerator Delay (){
+        yield return new WaitForSeconds(1.85f);
+        Application.LoadLevel(6);
+        yield return 0;
+    }
 
 	public IEnumerator Knockback (float knockDur, float knockbackPower, Vector3 knockbackDir) {
 		float timer = 0;
@@ -119,4 +136,14 @@ public class PlayerBehavior : MonoBehaviour {
 
 		yield return 0;
 	}
+
+    public void changeColor(){
+        r = Random.Range(0f, 1f);
+        g = Random.Range(0f, 1f);
+        b = Random.Range(0f, 1f);
+        // update player color
+        // gameObject.GetComponent<SpriteRenderer>().color = new Color(r, g, b, 1f);
+        // update fire color
+        fire.GetComponent<SpriteRenderer>().color = new Color(r, g, b, 1f);
+    }
 }

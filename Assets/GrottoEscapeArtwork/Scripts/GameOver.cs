@@ -11,10 +11,8 @@ public class GameOver : MonoBehaviour {
 	
     IEnumerator OpenMainMenu()
     {
-        print(Time.time);
         // wait for 2 seconds then open main menu
-        yield return new WaitForSeconds(2);
-        print(Time.time);
-        Application.LoadLevel(5);
+        yield return new WaitForSeconds(4);
+        Application.LoadLevel(0);
     }
 }

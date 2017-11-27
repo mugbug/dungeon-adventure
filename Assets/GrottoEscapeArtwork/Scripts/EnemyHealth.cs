@@ -25,7 +25,9 @@ public class EnemyHealth : MonoBehaviour {
 		currentHealth -= damage;
 		gameObject.GetComponent<Animation> ().Play ("WhiteFlashAnimation");
 		if (currentHealth <= 0) {
-			Destroy (gameObject);
+            GameObject crystal = (GameObject) Instantiate(Resources.Load("Crystal"));
+            crystal.transform.position = gameObject.transform.position;
+            Destroy (gameObject);
 		}
 	}
 

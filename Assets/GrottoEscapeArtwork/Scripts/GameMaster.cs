@@ -9,17 +9,28 @@ public class GameMaster : MonoBehaviour {
 	public Text scoreText;
 	public Text portalHintText;
 
-	void Start () {
+    private PlayerHealth ph;
+    private SpriteRenderer fireball;
+
+    void Start () {
 		if (Application.loadedLevel == 0) {
 			score = 0;
 		}
-	}
+        ph = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+    }
 
-	void Update () {
+	void Update() { 
 		scoreText.text = (""+score);
 	}
 
 	public void incrementScore() {
 		score += 1;
+        if (score % 50 == 0){
+            SoundManager.PlaySound("specialItem");
+            ph.addHealthPoint();
+        }
+        if (score % 100 == 0){
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehavior>().changeColor();
+        }
 	}
 }
